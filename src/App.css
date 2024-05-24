@@ -83,3 +83,26 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+/* SLIDESHOW IMAGE GOES HERE */
+
+.image {
+  width: 70vw;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 2px;
+  user-select: none;
+}
+
+.right-arrow {
+  font-size: 1.5rem;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  font-size: 1.5rem;
+  color: black;
+  z-index: 10;
+}
