@@ -11,6 +11,7 @@
 /* links inside navbar */
 .navbar a {
   float: left;
+  font-family: 'Droid Sans';
   font-size: 16px;
   text-align: center;
   padding: 14px 16px;
