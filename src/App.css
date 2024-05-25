@@ -95,7 +95,7 @@
 }
 
 .image:hover {
-  filter: brightness(70%);
+  filter: brightness(50%);
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -114,4 +114,23 @@
   font-size: 1.5rem;
   color: black;
   z-index: 10;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.slideshow-text {
+  display: none;
+}
+
+.container:hover .slideshow-text {
+  display: inline;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
 }

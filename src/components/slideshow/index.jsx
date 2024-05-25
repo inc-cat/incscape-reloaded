@@ -5,14 +5,17 @@ const Showcase = [
   {
     image: 'https://placehold.co/600x400',
     title: 'Placeholder image!',
+    text: 'This is a placholder image!!!',
   },
   {
     image: 'https://placehold.co/600x400/000000/FFFFFF/png',
     title: 'Placeholder image!!',
+    text: 'This is a placeholder image!!',
   },
   {
     image: 'https://placehold.co/600x400/orange/white',
     title: 'Placeholder image!!!',
+    text: 'This is a placeholder image!',
   },
 ];
 
@@ -40,7 +43,7 @@ const ShowSlider = function () {
     <>
       <p></p>
 
-      <section>
+      <section className="container">
         {Showcase.map(function (slide, i) {
           return (
             <div key={i}>
@@ -50,6 +53,7 @@ const ShowSlider = function () {
             </div>
           );
         })}
+        <div class="slideshow-text">{Showcase[currentImage].text}</div>
       </section>
       <FaLongArrowAltLeft className="left-arrow" onClick={previousSlide} />
       <FaLongArrowAltRight className="right-arrow" onClick={nextSlide} />
