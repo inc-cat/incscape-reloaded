@@ -48,7 +48,12 @@ const ShowSlider = function () {
           return (
             <div className="container" key={i}>
               {i === currentImage && (
-                <img src={slide.image} title={slide.title} className="image" />
+                <img
+                  src={slide.image}
+                  alt={slide.title}
+                  title={slide.title}
+                  className="image"
+                />
               )}
               <div class="slideshow-text">{Showcase[currentImage].text}</div>
             </div>
