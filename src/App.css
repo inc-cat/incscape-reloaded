@@ -94,15 +94,6 @@
   user-select: none;
 }
 
-.image:hover {
-  filter: brightness(50%);
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
-}
-
 .right-arrow {
   font-size: 1.5rem;
   z-index: 10;
@@ -126,11 +117,20 @@
   display: none;
 }
 
-.container:hover .slideshow-text {
+.container:has(:hover) .slideshow-text {
   display: inline;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 4rem;
+}
+
+.container:has(:hover) .image {
+  filter: brightness(50%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
 }

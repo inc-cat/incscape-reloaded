@@ -43,17 +43,17 @@ const ShowSlider = function () {
     <>
       <p></p>
 
-      <section className="container">
+      <section>
         {Showcase.map(function (slide, i) {
           return (
-            <div key={i}>
+            <div className="container" key={i}>
               {i === currentImage && (
                 <img src={slide.image} title={slide.title} className="image" />
               )}
+              <div class="slideshow-text">{Showcase[currentImage].text}</div>
             </div>
           );
         })}
-        <div class="slideshow-text">{Showcase[currentImage].text}</div>
       </section>
       <FaLongArrowAltLeft className="left-arrow" onClick={previousSlide} />
       <FaLongArrowAltRight className="right-arrow" onClick={nextSlide} />
