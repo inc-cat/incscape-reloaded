@@ -1,5 +1,5 @@
 const fs = require('fs');
-const structure = fs.readdirSync('.');
+const structure = fs.readdirSync('../../../public/blogs');
 
 const numbersOnly = function (fileName) {
   if (!/^\d+$/.test(fileName)) {
@@ -16,7 +16,7 @@ const potentialBlogs = structure.filter(numbersOnly);
 
 // goes through every folder to structure blog posts
 const blogPosts = potentialBlogs.map(function (entry) {
-  const folder = fs.readdirSync(`./${entry}`);
+  const folder = fs.readdirSync(`../../../public/blogs/${entry}`);
   // filters to find txt file which has the body of the blog post
   const textFiles = folder.filter(function txtFile(file) {
     return /\.txt$/.test(file);
@@ -27,7 +27,7 @@ const blogPosts = potentialBlogs.map(function (entry) {
   }
   // reads text file and splits into lines
   const textField = fs
-    .readFileSync(`./${entry}/${textFiles[0]}`)
+    .readFileSync(`../../../public/blogs/${entry}/${textFiles[0]}`)
     .toString('utf-8')
     .split('\n');
 
@@ -40,7 +40,7 @@ const blogPosts = potentialBlogs.map(function (entry) {
       return /\.(jpg|gif|png)$/.test(image);
     })
     .map(function (imageFile) {
-      return `./${entry}/${imageFile}`;
+      return `../../../public/blogs/${entry}/${imageFile}`;
     });
 
   const unixTime = new Date(entry * 1000);
@@ -49,6 +49,20 @@ const blogPosts = potentialBlogs.map(function (entry) {
   const postDay = unixTime.getDate();
   const postHours = unixTime.getHours();
   const postMinutes = unixTime.getMinutes();
+
+  const fileNameToTitle = function (fileName) {
+    const pattern = /^[^.]+/;
+
+    const match = fileName.match(pattern);
+
+    if (match) {
+      return match[0];
+    }
+
+    return '';
+  };
+
+  const title = fileNameToTitle(textFiles[0]);
 
   const monthLookup = {
     0: 'January',
@@ -67,7 +81,12 @@ const blogPosts = potentialBlogs.map(function (entry) {
 
   const timeStamp = `${postDay} ${monthLookup[postMonth]} ${postYear}, ${postHours}:${postMinutes}`;
 
-  return { text: textField, images: imageFiles, timestamp: timeStamp };
+  return {
+    title: title,
+    text: textField,
+    images: imageFiles,
+    timestamp: timeStamp,
+  };
 });
 
-fs.writeFileSync('blogPosts.json', JSON.stringify(blogPosts));
+fs.writeFileSync('blogPosts.json', JSON.stringify(blogPosts.reverse()));
