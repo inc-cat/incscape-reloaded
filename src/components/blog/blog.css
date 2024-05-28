@@ -1,0 +1,17 @@
+.blog-pics {
+  width: 100%;
+  padding: 40px;
+  height: 500px;
+}
+
+.blog-post {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.blog-panel {
+  float: center;
+  width: 70%;
+  margin-left: 15%;
+}
