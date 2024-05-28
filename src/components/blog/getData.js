@@ -40,7 +40,7 @@ const blogPosts = potentialBlogs.map(function (entry) {
       return /\.(jpg|gif|png)$/.test(image);
     })
     .map(function (imageFile) {
-      return `../../../public/blogs/${entry}/${imageFile}`;
+      return `blogs/${entry}/${imageFile}`;
     });
 
   const unixTime = new Date(entry * 1000);
