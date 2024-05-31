@@ -1,3 +1,15 @@
+p,
+h1,
+h2,
+.time-stamp {
+  color: rgb(253, 255, 125);
+  text-align: left;
+}
+
+.time-stamp {
+  font-size: 10px;
+}
+
 .blog-panel {
   justify-content: center;
   width: 70%;
@@ -11,10 +23,10 @@
 }
 
 .blog {
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.062);
   padding: 20px;
   margin-top: 20px;
-  border: 1px solid black;
+  border: 1px solid rgb(253, 255, 125);
 }
 
 .image-container {
@@ -22,7 +34,7 @@
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  border: 1px solid black;
+  border: 1px solid rgb(255, 255, 255);
 }
 
 .div1 {

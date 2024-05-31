@@ -38,8 +38,10 @@ function Blog() {
                     {blogEntry.text.map(function (line) {
                       return <p>{line}</p>;
                     })}
-                    #{blogCount}: {blogEntry.timestamp}
-                    {blogCount--}
+                    <div className="time-stamp">
+                      #{blogCount}: {blogEntry.timestamp}
+                      {blogCount--}
+                    </div>
                   </div>
                 </div>
               );
