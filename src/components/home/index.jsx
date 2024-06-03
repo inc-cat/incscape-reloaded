@@ -1,4 +1,4 @@
-import './home.css  ';
+import './home.css';
 import SlideShow from '../slideshow';
 
 function Home() {
