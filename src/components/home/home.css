@@ -1,0 +1,26 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+
+  padding: 10px;
+}
+.grid-item {
+  /* border: 1px solid rgba(0, 0, 0, 0.8); */
+  font-size: 30px;
+  text-align: center;
+}
+
+.grid-item:nth-child(4n + 1),
+.grid-item:nth-child(4n + 2) {
+  /* padding: 20px; */
+}
+
+.flex-thing {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-thing > div.logo {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

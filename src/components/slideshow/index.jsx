@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from 'react-icons/fa';
+import './blog.css';
 
 const Showcase = [
   {
