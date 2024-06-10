@@ -13,6 +13,7 @@ const numbersOnly = function (fileName) {
 
 // only chooses files with numbers only, no file extension to be used for folders only
 const potentialBlogs = structure.filter(numbersOnly);
+let blogNumber = 0;
 
 // goes through every folder to structure blog posts
 const blogPosts = potentialBlogs.map(function (entry) {
@@ -81,8 +82,11 @@ const blogPosts = potentialBlogs.map(function (entry) {
 
   const timeStamp = `${postDay} ${monthLookup[postMonth]} ${postYear}, ${postHours}:${postMinutes}`;
 
+  blogNumber++;
+
   return {
     title: title,
+    entryNumber: blogNumber,
     text: textField,
     images: imageFiles,
     timestamp: timeStamp,
