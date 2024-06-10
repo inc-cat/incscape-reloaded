@@ -43,7 +43,17 @@ function Blog() {
       <div className="blog-container">
         <div className="blog-panel">
           <div className="blog-post">
-            {BlogData.map(function (blogEntry) {
+            {BlogData.filter(function (blogEntry) {
+              if (!searchParams.get('name')) {
+                return true;
+              }
+              const textField = String(blogEntry.text).toLowerCase();
+              const titleField = String(blogEntry.title).toLowerCase();
+              return (
+                textField.includes(searchParams.get('name').toLowerCase()) ||
+                titleField.includes(searchParams.get('name').toLowerCase())
+              );
+            }).map(function (blogEntry) {
               return <BlogEntry blogEntry={blogEntry} />;
             })}
           </div>
