@@ -3,8 +3,30 @@ import './blog.css';
 import BlogData from './blogPosts.json';
 import { useRef } from 'react';
 
+function BlogEntry({ blogEntry }) {
+  return (
+    <div className="blog">
+      <h2>{blogEntry.title}</h2>
+      <div className="image-container">
+        {blogEntry.images.map(function (image) {
+          return (
+            <>
+              <img src={image} className="blog-pics" alt="" />
+            </>
+          );
+        })}
+      </div>
+      <div className="blog-text">
+        {blogEntry.text.map(function (line) {
+          return <p>{line}</p>;
+        })}
+        <div className="time-stamp"></div>
+      </div>
+    </div>
+  );
+}
+
 function Blog() {
-  let blogCount = BlogData.length;
   let [searchParams, setSearchParams] = useSearchParams();
   const searchTextRef = useRef();
   const keywordQuery = function (event) {
@@ -22,29 +44,7 @@ function Blog() {
         <div className="blog-panel">
           <div className="blog-post">
             {BlogData.map(function (blogEntry) {
-              return (
-                <div className="blog">
-                  <h2>{blogEntry.title}</h2>
-                  <div className="image-container">
-                    {blogEntry.images.map(function (image) {
-                      return (
-                        <>
-                          <img src={image} className="blog-pics" alt="" />
-                        </>
-                      );
-                    })}
-                  </div>
-                  <div className="blog-text">
-                    {blogEntry.text.map(function (line) {
-                      return <p>{line}</p>;
-                    })}
-                    <div className="time-stamp">
-                      #{blogCount}: {blogEntry.timestamp}
-                      {blogCount--}
-                    </div>
-                  </div>
-                </div>
-              );
+              return <BlogEntry blogEntry={blogEntry} />;
             })}
           </div>
         </div>
