@@ -20,7 +20,9 @@ function BlogEntry({ blogEntry }) {
         {blogEntry.text.map(function (line) {
           return <p>{line}</p>;
         })}
-        <div className="time-stamp"></div>
+        <div className="time-stamp">
+          #{blogEntry.entryNumber}: {blogEntry.timestamp}
+        </div>
       </div>
     </div>
   );
