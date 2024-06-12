@@ -11,7 +11,9 @@ function Home() {
 
     return (
       <div class="grid-item flex-thing">
-        <div className="logo">{logo}</div>
+        <div className="logo">
+          <img src={logo} />
+        </div>
         <div className="label">{label}</div>
       </div>
     );
@@ -22,10 +24,8 @@ function Home() {
       <SlideShow />
       incspace reloaded, coming soon!
       <KnowledgeGrid>
-        <Knowledge logo="FL Studio Logo" label="FL Studio" />
-        <Knowledge logo="Pro Tools Logo" label="Pro Tools" />
-        <Knowledge logo="Reason Logo" label="Reason" />
-        <Knowledge logo="Cubase Logo" label="Cubase" />
+        <Knowledge logo="icons/fl.png" label="FL Studio" />
+        <Knowledge logo="icons/protools.png" label="Pro Tools" />
       </KnowledgeGrid>
     </>
   );
