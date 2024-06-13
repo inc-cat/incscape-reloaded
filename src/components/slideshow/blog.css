@@ -1,3 +1,53 @@
 .container {
   background-color: black;
 }
+
+.arrows {
+  text-align: center;
+}
+
+.right-arrow,
+.left-arrow {
+  font-size: 1.5rem;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+  color: white;
+  align-content: center;
+}
+
+.image {
+  width: 70vw;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 2px;
+  user-select: none;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.slideshow-text {
+  display: none;
+}
+
+.container:has(:hover) .slideshow-text {
+  display: inline;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+}
+
+.container:has(:hover) .image {
+  filter: brightness(50%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}

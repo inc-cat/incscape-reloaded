@@ -13,7 +13,7 @@ const ManageBio = function () {
   }, []);
 
   return (
-    <div>
+    <div className="bio-text">
       {bio.map(function (line) {
         return <p>{line}</p>;
       })}

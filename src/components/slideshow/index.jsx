@@ -43,7 +43,6 @@ const ShowSlider = function () {
   return (
     <>
       <p></p>
-
       <section>
         {Showcase.map(function (slide, i) {
           return (
@@ -60,9 +59,11 @@ const ShowSlider = function () {
             </div>
           );
         })}
-      </section>
-      <FaLongArrowAltLeft className="left-arrow" onClick={previousSlide} />
-      <FaLongArrowAltRight className="right-arrow" onClick={nextSlide} />
+      </section>{' '}
+      <div className="arrows">
+        <FaLongArrowAltLeft className="left-arrow" onClick={previousSlide} />
+        <FaLongArrowAltRight className="right-arrow" onClick={nextSlide} />
+      </div>
       <p></p>
     </>
   );
