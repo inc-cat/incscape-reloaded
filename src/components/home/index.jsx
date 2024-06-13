@@ -1,5 +1,6 @@
 import './home.css';
 import SlideShow from '../slideshow';
+import ManageBio from './manageBio';
 
 function Home() {
   const KnowledgeGrid = function (props) {
@@ -22,6 +23,7 @@ function Home() {
   return (
     <>
       <SlideShow />
+      <ManageBio />
       incspace reloaded, coming soon!
       <KnowledgeGrid>
         <Knowledge logo="icons/fl.png" label="FL Studio" />
