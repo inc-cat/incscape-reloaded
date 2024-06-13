@@ -3,6 +3,8 @@
   grid-template-columns: auto auto;
 
   padding: 10px;
+  width: 50%;
+  margin: 0 auto;
 }
 .grid-item {
   /* border: 1px solid rgba(0, 0, 0, 0.8); */
@@ -16,6 +18,7 @@
 }
 
 .flex-thing {
+  color: white;
   display: flex;
   flex-direction: column;
 }
@@ -30,4 +33,9 @@
   max-width: 65%;
   align-content: center;
   margin: 0 auto;
+}
+
+.headings {
+  color: white;
+  text-align: center;
 }
