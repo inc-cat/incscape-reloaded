@@ -2,6 +2,8 @@ import { useSearchParams } from 'react-router-dom';
 import './blog.css';
 import BlogData from './blogPosts.json';
 import { useRef } from 'react';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 function BlogEntry({ blogEntry }) {
   return (
@@ -11,7 +13,9 @@ function BlogEntry({ blogEntry }) {
         {blogEntry.images.map(function (image) {
           return (
             <>
-              <img src={image} className="blog-pics" alt="" />
+              <Zoom>
+                <img src={image} className="blog-pics" alt="" />
+              </Zoom>
             </>
           );
         })}
